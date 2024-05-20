@@ -391,7 +391,8 @@ address {
     background-size: cover;
     background-position: center center;
     max-width: 1440px;
-    margin: 0 auto;
+ padding: 96px 0;
+ 
 }
 
 .hero-title {
@@ -452,14 +453,18 @@ address {
 }
 
 /* -----categories----- */
-.conteiner-categories-icon,
+@media screen and (max-width:1157px){
+    .conteiner-categories-icon,
  .categories-icon{
     display: none;
 }
+}
 
 .categories {
-    padding: 96px 0;
- display: block;
+   padding: 96px 0;
+max-width: 320px;
+display: inline;
+
 
 }
 .categories-subtitle{
@@ -477,8 +482,7 @@ address {
 display: flex;
 gap: 72px;
 flex-direction: column;
-flex-wrap: nowrap;
-justify-content: center;
+
 align-items: center;
 background-color: #FFFFFF;
 }
@@ -493,25 +497,38 @@ background-color: #FFFFFF;
 }
 
 .categories-item{
-    display: flex;
-    flex-wrap: wrap;
+    display: inline;
+  
 }
 
 @media screen and (min-width: 768px){
     .categories{
         display: flex;
+        max-width: 768px;
+        width: calc((100% - 1 * 24px) / 2); 
     }
     .categories-item {
+
         width: calc((100% - 1 * 24px) / 2);   
      }
      .categories-list {
         gap: 24px;
+        display: flex;
+        width: calc((100% - 1 * 24px) / 2);   
     }
 }
 
 @media screen and (min-width: 1158px){
+    .conteiner-categories-icon,
+    .categories-icon{
+       display: visible;
+   }
     .categories {
         padding: 120px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        width: 1128px;
     }
     
     .categories-subtitle {
@@ -544,8 +561,28 @@ background-color: #FFFFFF;
        width: calc((100% - 3 * 24px) / 4);
      
     }
-    .conteiner-categories-icon,
- .categories-icon{
-    display: visible;
+
 }
+/* -----team---- */
+.team {
+    background-color: #F4F4FD;
+    padding: 96px 0;
+    max-width: 320px;
+    
+}
+
+.team-list {
+    display: inline;
+    gap: 24px; 
+
+}
+
+.team-title{
+font-weight: 700;
+font-size: 36px;
+line-height: 1.11;
+letter-spacing: 0.02em;
+text-align: center;
+color: #2e2f42;
+padding: 72px 0;
 }
