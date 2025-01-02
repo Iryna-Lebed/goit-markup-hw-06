@@ -910,6 +910,7 @@ address {
     display: flex;
     gap: 24px;
 }
+
 .footer-input{
     border: 1px solid #ffffff;
     width: 288px;
