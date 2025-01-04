@@ -405,18 +405,19 @@ address {
      
     background-color: #2e2f42;
     padding: 72px 0;
-    background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), url(../images/hero/hero-mob-img-min.jpg);
+    background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), image-set(url(../images/hero/hero-img-tab-min.jpg), url(../images/people-office1_1x-min.jpg) 1x, url(../images/people-office1_2x-min.jpg) 2x);
+
     
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     max-width: 1440px;
-    margin: 96px 0;
+  
  
 }
 
 .hero-title {
-    max-width: 320px;
+    max-width: 216px;
     margin: 0 auto;   
     font-weight: 700;
     font-size: 36px;
@@ -453,12 +454,13 @@ address {
 @media screen and (min-width: 768px){
     .hero{
         padding: 112px 0;
-        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), url(../images/hero/hero-img-tab-min.jpg);
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), image-set(url(../images/hero/hero-img-tab-min.jpg), url(../images/people-office1_1x-min.jpg) 1x, url(../images/people-office1_2x-min.jpg) 2x);
     }
     .hero-title{
         font-size: 56px;
         line-height: 1.07;
         margin-bottom: 36px;
+        max-width: 491px;
     }
 }
 
@@ -466,8 +468,9 @@ address {
     .hero{
         
         padding: 188px 0;
-        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)), url(../images/hero/hero-desk-img-min.jpg);
+        background-image:linear-gradient(rgba(46, 47, 66, 0.7),rgba(46, 47, 66, 0.7)),image-set(url(../images/hero/hero-img-tab-min.jpg), url(../images/people-office1_1x-min.jpg) 1x, url(../images/people-office1_2x-min.jpg) 2x);
     }
+    
     .hero-title{
         margin-bottom: 48px;
     }
@@ -497,8 +500,8 @@ address {
 
 /* -----categories----- */
 .categories{
-    padding: 96px 0;
-    margin: 0 auto;
+    margin: 96px 0;
+   
  
  }
  .categories-list{
@@ -507,7 +510,7 @@ address {
     gap: 24px;
  }
  .categories-item{ 
-    padding-bottom: 72px;
+    margin-bottom: 0;
     max-width: 100%;
  }
  .conteiner-categories-icon{
@@ -523,7 +526,7 @@ address {
     margin-bottom: 8px;
 }
 .categories-text{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -537,6 +540,10 @@ address {
     column-gap: 24px;
     row-gap: 72px;
     margin: 0 auto;
+    
+}
+.categories-subtitle{
+    text-align: left;
 }
 
 .categories-item {
@@ -591,8 +598,7 @@ address {
 .team {
     background-color: #F4F4FD;
     padding: 96px 0; 
-    padding-left: 28px;
-    padding-right: 28px;
+
 }
 
 .team-list {
@@ -600,6 +606,7 @@ address {
     gap: 72px;  
     flex-wrap: wrap; 
     align-content: center;   
+    justify-content: center;
 }
 
 .team-title {
@@ -697,27 +704,32 @@ address {
         gap: 24px;
         margin:0 auto;
         align-content: center;
-      
-     }
-     .categories{
-        padding-left: 108px;
-        padding-right: 108px;
+        justify-content: center;
      }
     .team-item{
         width: calc((100% - 1 * 24px) / 2);
-        max-width:264;
+      
 
     } 
+    .team-images{
+        display: flex;
+        justify-content: center;
+    }
 }
 @media screen and (min-width: 1158px){
     .team {
-        padding: 120px 0;     
+        margin: 120px 0;     
     }
     
     .team-list {
         display: flex;
         gap: 24px;   
     }
+    .team-item{
+        width: calc((100% - 3 * 24px) / 4);;
+        max-width:264;
+
+    } 
 }
 /* =============portfolio======== */
 .our-portfolio{
@@ -847,6 +859,7 @@ address {
     gap: 72px;
     padding-left: 16px;
     padding-left: 16px;
+    justify-content: center;
 }
 .footer-logo{
     font-family: "Raleway", sans-serif;
@@ -954,11 +967,11 @@ address {
     text-align: center;
     color: #ffffff;
     border-radius: 4px;
-    padding: 8px 24px;
+
     width: 165px;
     height: 40px;
     background-color: #4d5ae5;
-    gap: 16px;
+
     min-width: 165px;
     height: 40px;
     display: flex;
@@ -970,6 +983,8 @@ address {
 .icon-footer-subscribe{
     margin-left: 16px; 
 }
+.icon-footer-subscribe-use{
+    fill: #fff;}
 
 
 @media screen and (min-width: 768px){
@@ -1009,13 +1024,38 @@ address {
 @media screen and (min-width: 1158px){
     .footer-container{
         display: flex;
+        flex-wrap: nowrap;
         align-items: baseline;
     }
     .footer{
         padding: 100px 0;
     }
     .footer-logo-text{
-        margin-right: 120px;
+       max-width: 264px;
+    }
+    .subscribe-footer-form{
+        display: flex;
+        gap: 24px;
+        flex-wrap: nowrap;
+    }
+    .footer-text {
+   
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #f4f4fd;
+        max-width: 264px;
+    }
+    .footer-social-text{
+        font-weight: 500;
+        font-size: 16px;
+        
+        line-height: 24px; 
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #FFFFFF ;
+       
+        margin-bottom: 16px;
     }
 
 }
@@ -1110,13 +1150,14 @@ address {
         margin-bottom: 8px; 
     }
     
-    .review-form {
+/*--    .review-form {
      
         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
         background: #fcfcfc;
         border-radius: 4px;
         border: 1px solid rgba(46, 47, 66, 0.4);
     }
+        --*/
     
     .review-form-lable {
         display: block;
@@ -1188,22 +1229,25 @@ address {
     
     .review-form-checkbox-wraper{
         margin-bottom: 24px;
+  
     }
-    
-    
     
     .review-form-checkbox:checked + .review-form-checkbox-lable > .custom-checkbox{
         fill: #f4f4fd;
         border: none;
         background-color: #404bbf;
+        
     }
-    .review-form-checkbox-lable { 
+    .review-form-checkbox-lable {
+        
         font-size: 12px;
         line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
     }
+
     .custom-checkbox {
+        
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -1220,6 +1264,7 @@ address {
         text-decoration: underline;
         text-decoration-skip-ink: none;
         color: #4d5ae5;
+        
     }
     
     .btn-form{
@@ -1229,6 +1274,8 @@ address {
     }
     
     .review-form-btn{
+        margin-left: auto;
+        margin-right: auto;
         display: block;
         justify-content: center;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
